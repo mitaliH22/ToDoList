@@ -4,7 +4,8 @@ body {
 }
 .App{
     padding: 5px;
-    margin-left: 30px;
+    display: flex;
+    justify-content: space-around;
     text-align: center;
 }
 .display {

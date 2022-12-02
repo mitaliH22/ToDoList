@@ -11,32 +11,6 @@ export default class App extends Component {
     super(props);
     this.state = { items: [], newId: 0 };
     this.handleSubmit = this.handleSubmit.bind(this);
-  }
-
-  localStr() {
-    localStorage.setItem("document", JSON.stringify(this.state.items));
-  }
-
-  
-  handleSubmit = (e) => {
-    e.preventDefault();
-    
-    const newItem = {
-      id: this.state.newId,
-      label: e.target[0].value,
-    };
-    if (!newItem.label) {
-      alert("Please enter a task");
-      return false;
-    }
-    this.setState( {
-      items: [...this.state.items, newItem.label],
-      newId: this.state.newId + 1,
-    })  
-    e.target[0].value = "";
-  };
-
-  componentDidMount(){
     const documentData = JSON.parse(localStorage.getItem("document"));
     if (localStorage.getItem("document")) {
       this.setState({
@@ -50,9 +24,32 @@ export default class App extends Component {
     }
   }
 
-componentDidUpdate(){
-      this.localStr();
-}
+  localStr() {
+    localStorage.setItem("document", JSON.stringify(this.state.items));
+  }
+
+
+  handleSubmit = (e) => {
+    e.preventDefault();
+
+    const newItem = {
+      id: this.state.newId,
+      label: e.target[0].value,
+    };
+    if (!newItem.label) {
+      alert("Please enter a task");
+      return false;
+    }
+    this.setState({
+      items: [...this.state.items, newItem.label],
+      newId: this.state.newId + 1,
+    })
+    e.target[0].value = "";
+  };
+
+  componentDidUpdate() {
+    this.localStr();
+  }
 
   deleteItem = (e) => {
     this.setState((state) => ({

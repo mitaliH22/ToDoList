@@ -1,4 +1,4 @@
-import React , { Component } from 'react';
+import React, { Component } from 'react';
 
 class Display extends Component {
   constructor(props) {
@@ -7,7 +7,7 @@ class Display extends Component {
     this.handleSubmit = this.handleSubmit.bind(this);
   }
 
-  handleSubmit = (e) =>{
+  handleSubmit = (e) => {
     this.props.handleSubmit(e);
   };
 
@@ -17,22 +17,16 @@ class Display extends Component {
         <h1>
           To-Do List <i class="bi bi-journal-check"></i>
         </h1>
-        <div>
-          <form
-            onSubmit={this.handleSubmit}
-          >
-            <input
-              type="text"
-              className="inputDisplay"
-              placeholder="Add your task here..."
-            />
-            <input
-              type="submit"
-              value="Add new task"
-              className="addBtn"
-            />
-          </form>
-        </div>
+        <form
+          onSubmit={this.handleSubmit}
+        >
+          <input
+            type="text"
+            className="inputDisplay"
+            placeholder="Add your task here..."
+          />
+          <button className='addBtn'> Add new task</button>
+        </form>
       </div>
     );
   }

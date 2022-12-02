@@ -1,48 +1,96 @@
-.container{
-    border: 1px solid black;
+$black-color: #000000;
+$white-color: white;
+$border-dark: 1px solid $white-color;
+
+@mixin display-content() {
+    display: flex;
+    justify-content: space-around;
+}
+
+@mixin button-design($padding, $background-color){
+    border: none;
+    border-radius: 6px;
+    padding: $padding;
+    background-color: $background-color;
+}
+
+.container {
+    border: $border-dark;
     display: flex;
     flex-direction: column;
     align-items: center;
-.card-container{
-    width:300px;
-    padding: 5px 20px;
-    .card-header{
+    .card-container {
+        border-bottom: $border-dark;
+        width: 300px;
+        padding: 5px 20px;
+        .card-header {
+            display: flex;
+            justify-content: space-between;
+            h1 {
+                margin: 0;
+            }
+            .newTask-btn {
+                @include button-design(0px 15px , floralwhite);
+            }
+        }
+    }
+    .card-body-end {
         display: flex;
-        gap: 80px;
-    h1{
-        margin: 0;
-    }
     }
 }
-.card-body-end{
+.input-container {
     display: flex;
-}
-}
-.input-container{
-    display: flex;
-    .input-card{
-    margin: 25px;  
-    padding: 5px;  
-    border: 1px solid black;
-    .input-values{
-     display: flex;
-     flex-direction: column;
-     gap: 10px;  
+    .input-card {
+        width: 270px;
+        margin: 16px 0;
+        padding: 10px 5px;
+        border: $border-dark;
+        .input-values {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+        .input-btn {
+            @include display-content;
+            margin-top: 10px;
+            button {
+                @include button-design(10px 20px, floralwhite);
+            }
+        }
     }
-    .input-btn{
-        display: flex;
-        justify-content: space-around;
-        margin-top: 10px;
-    }
-    }
-    
 }
-ul{
-    list-style: none;
-    padding: 0;
-.todo-card{
-    margin: 25px;  
-    padding: 5px;  
-    border: 1px solid black;
-}
+.list-container {
+    width: 270px;
+    ul {
+        list-style: none;
+        padding: 0;
+        .todo-card {
+            padding: 10px 5px;
+            border: $border-dark;
+            .task-description{
+                margin: 0;
+                font-weight: 500;
+            }
+            .todo-card-data {
+                @include display-content;
+
+                span{
+                    display: flex;
+                    align-items: center;
+                    gap: 10px;
+                }
+                .avatar , .date{
+                    border-radius: 50%;
+                    height: 20px;
+                    width: 20px;
+                }
+                .avatar{
+                    background-color: red;
+                }
+                .date{
+                    background-color: #ccc;
+                }
+            }
+        }
+    }
 }

@@ -7,7 +7,7 @@ $border-dark: 1px solid $white-color;
     justify-content: space-around;
 }
 
-@mixin button-design($padding, $background-color){
+@mixin button-design($padding, $background-color) {
     border: none;
     border-radius: 6px;
     padding: $padding;
@@ -30,7 +30,7 @@ $border-dark: 1px solid $white-color;
                 margin: 0;
             }
             .newTask-btn {
-                @include button-design(0px 15px , floralwhite);
+                @include button-design(0px 15px, floralwhite);
             }
         }
     }
@@ -61,36 +61,66 @@ $border-dark: 1px solid $white-color;
 }
 .list-container {
     width: 270px;
-    ul {
+    .todo-list {
         list-style: none;
         padding: 0;
-        .todo-card {
-            padding: 10px 5px;
-            border: $border-dark;
-            .task-description{
-                margin: 0;
-                font-weight: 500;
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        gap: 15px;
+        .list-view {
+            display: flex;
+            gap: 15px;
+            .task-checkbox{
+                width: 20px;
             }
-            .todo-card-data {
-                @include display-content;
-
-                span{
+            .todo-card {
+                padding: 5px 20px;
+                border: $border-dark;
+                .todo-card-top {
                     display: flex;
-                    align-items: center;
-                    gap: 10px;
-                }
-                .avatar , .date{
-                    border-radius: 50%;
-                    height: 20px;
-                    width: 20px;
-                }
-                .avatar{
-                    background-color: red;
-                }
-                .date{
-                    background-color: #ccc;
+                    justify-content: center;
+                    gap: 15px;
+                    .task-description {
+                        margin: 0;
+                        font-weight: 500;
+                    }
                 }
             }
         }
+    }
+}
+.todo-card-data {
+    display: flex;
+    gap: 15px;
+
+    span {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+    }
+    .avatar,
+    .date {
+        border-radius: 50%;
+        height: 20px;
+        width: 20px;
+    }
+    .avatar {
+        background-color: red;
+    }
+    .date {
+        background-color: #ccc;
+    }
+}
+
+.edit-container {
+    border: $border-dark;
+    padding: 10px 5px;
+    .edit-container-top {
+        display: flex;
+        gap: 10px;
+    }
+    button {
+        @include button-design(10px 20px, floralwhite);
     }
 }

@@ -1,29 +1,21 @@
 import React from "react";
+import Test from "./Test";
 
 function List(props) {
-  var today = new Date(),
-  date = today.getDate() + "/" + (today.getMonth()+1) + "/" + today.getFullYear();
 
   return (
     <div className="list-container">
-      <ul>
+      
+      <ul className="todo-list">
         {props.cards
           .filter((item) => item.taskType === props.cardName)
-          .map((task, i) => {
+          .map((task) => {
             return (
-              <li className="todo-card" key={i}>
-                <p className="task-description">{task.text}</p>
-                <div className="todo-card-data">
-                  <span>
-                    <div className="avatar"></div>
-                    <p>username</p>
-                  </span>
-                  <span>
-                    <div className="date"></div>
-                    <p>{date}</p>
-                  </span>
-                </div>
-              </li>
+              <Test
+                cards={props.cards}
+                updateCards={props.updateCards}
+                value={task}
+              />
             );
           })}
       </ul>

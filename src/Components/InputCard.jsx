@@ -4,6 +4,8 @@ function InputCard(props){
   const [task, setTask] = useState("");
   const [category, setCategory] = useState("Work-In");
 
+  const random = Math.floor(Math.random() * 100);
+
   const selectTask = (e) => {
      setTask(e.target.value);
   }
@@ -11,11 +13,11 @@ function InputCard(props){
     setCategory(e.target.value);
   }
 
-
   const addTask =()=>{
-    props.setCards({ text: task, taskType: category }); 
+    props.setCards({id:random, text: task, taskType: category }); 
     setTask("");
-    setCategory("Work-In");
+    setCategory("select");
+    props.toggleCard();
   }
 
   return (
@@ -31,7 +33,7 @@ function InputCard(props){
           </select>
         </div>
         <div className="input-btn">
-          <button onClick={addTask}>Add</button>
+          <button onClick={addTask} >Add</button>
           <button onClick={props.toggleCard}>Cancel</button>
         </div>
       </div>

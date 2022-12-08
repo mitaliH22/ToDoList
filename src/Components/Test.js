@@ -4,7 +4,6 @@ import EditTask from "./EditTask";
 
 function Test(props) {
   const [activeTab, setActiveTab] = useState(true);
-  // const [checked , setCheckedTask] = useState(false);
 
   const editTask = () => {
     setActiveTab(!activeTab);
@@ -14,14 +13,9 @@ function Test(props) {
     const removeItem = props.cards.filter((task) => {
       return task.id !== id;
     });
-
-    console.log(removeItem);
     props.updateCards(removeItem);
   };
 
-  // const handleChange=(e)=>{
-  //   console.log(e.target)
-  // }
 
   return activeTab ? (
     <>
@@ -30,7 +24,7 @@ function Test(props) {
         editTask={editTask}
         index={props.value.id}
         deletedTask={deletedTask}
-        
+        deleteSelected={props.deleteSelected}
       />
     </>
   ) : (

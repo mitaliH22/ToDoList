@@ -1,14 +1,21 @@
 import React from 'react';
 
+
 function ListView (props){  
+  const handlecheckbox =(e,item)=>{
+    props.deleteSelected(e,item)
+   
+  }
+
     return (
-      <div className="list-view">
-        <input
-          type="checkbox"
-          name="task-checkbox"
-          className="task-checkbox"
-        />
-        <li className="todo-card">
+      <li className="todo-card">
+        <div className="todo-card-content">
+          <input
+            type="checkbox"
+            name="task-checkbox"
+            className="task-checkbox"
+            onChange={(e) => handlecheckbox(e, props.value)}
+          />
           <div className="todo-card-top">
             <p className="task-description">{props.value.text}</p>
             <i className="bi bi-pencil-square" onClick={props.editTask}></i>
@@ -17,18 +24,18 @@ function ListView (props){
               onClick={() => props.deletedTask(props.index)}
             ></i>
           </div>
-          <div className="todo-card-data">
-            <span>
-              <div className="avatar"></div>
-              <p>username</p>
-            </span>
-            <span>
-              <div className="date"></div>
-              <p>date</p>
-            </span>
-          </div>
-        </li>
-      </div>
+        </div>
+        <div className="todo-card-data">
+          <span>
+            <div className="avatar"></div>
+            <p>username</p>
+          </span>
+          <span>
+            <div className="date"></div>
+            <p>date</p>
+          </span>
+        </div>
+      </li>
     );
 
 }

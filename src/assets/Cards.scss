@@ -24,13 +24,17 @@ $border-dark: 1px solid $white-color;
         width: 300px;
         padding: 5px 20px;
         .card-header {
-            display: flex;
-            justify-content: space-between;
+            .card-header-btns {
+                display: flex;
+                justify-content: center;
+                gap: 20px;
+            }
             h1 {
                 margin: 0;
             }
-            .newTask-btn {
-                @include button-design(0px 15px, floralwhite);
+            .newTask-btn,
+            .deleteTask-btn {
+                @include button-design(10px 15px, floralwhite);
             }
         }
     }
@@ -68,23 +72,27 @@ $border-dark: 1px solid $white-color;
         justify-content: center;
         flex-direction: column;
         gap: 15px;
-        .list-view {
+
+        .task-checkbox {
+            width: 20px;
+        }
+        .todo-card {
+            padding: 5px 20px;
+            border: $border-dark;
             display: flex;
-            gap: 15px;
-            .task-checkbox{
-                width: 20px;
+            flex-direction: column;
+            align-items: center;
+            .todo-card-content {
+                display: flex;
+                gap: 10px;
             }
-            .todo-card {
-                padding: 5px 20px;
-                border: $border-dark;
-                .todo-card-top {
-                    display: flex;
-                    justify-content: center;
-                    gap: 15px;
-                    .task-description {
-                        margin: 0;
-                        font-weight: 500;
-                    }
+            .todo-card-top {
+                display: flex;
+                justify-content: center;
+                gap: 15px;
+                .task-description {
+                    margin: 0;
+                    font-weight: 500;
                 }
             }
         }

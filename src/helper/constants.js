@@ -1,4 +1,4 @@
-const random = Math.floor(Math.random() * 100);
+
 const data = [
   {
     name: "ToDo-List",
@@ -14,6 +14,11 @@ const data = [
   },
 ];
 
-const items = [{ id:random, text: "", taskType: "" }];
+const items = [
+  { id: "2", text: "anything", taskType: "ToDo-List" },
+  { id: "22", text: "shopping", taskType: "ToDo-List" },
+  { id: "12", text: "dining", taskType: "Work-In" },
+  { id: "32", text: "hiking", taskType: "Finished" },
+];
 
 export { data, items };

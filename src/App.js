@@ -4,8 +4,9 @@ import "././assets/App.css";
 import "./assets/App.scss";
 import {data} from "./helper/constants";
 
+
 export default function App () {
-  
+ 
     return (
         <div className="App">
           {data.map((item) => {

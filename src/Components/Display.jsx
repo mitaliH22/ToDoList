@@ -18,19 +18,14 @@ class Display extends Component {
           To-Do List <i class="bi bi-journal-check"></i>
         </h1>
         <div>
-          <form
-            onSubmit={this.handleSubmit}
-          >
+          <form onSubmit={this.handleSubmit}>
             <input
               type="text"
               className="inputDisplay"
               placeholder="Add your task here..."
             />
-            <input
-              type="submit"
-              value="Add new task"
-              className="addBtn"
-            />
+            <button className="addBtn">Add new task</button>
+            {/* <input type="submit" value="Add new task" className="addBtn" /> */}
           </form>
         </div>
       </div>

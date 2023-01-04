@@ -6,10 +6,19 @@ import "jquery-ui-dist/jquery-ui";
 
 function List(props) {
 
-  useEffect(() => {
-    $(".sortable").sortable(({
-      connectWith: ".sortable"
-    }));
+  
+  useEffect((props) => {
+    $(".sortable").sortable({
+      connectWith: ".sortable",
+      start: function (event, ui) {
+      ui.item.css("background", "#f3f3f3");
+      ui.item.css("border", "3px solid #ccc"); 
+      },
+      stop: function (event, ui) {
+        ui.item.css("background", "none");
+        ui.item.css("border", "1px solid #ccc"); 
+      },
+    });
   },[]);
  
 

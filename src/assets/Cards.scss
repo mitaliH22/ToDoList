@@ -1,6 +1,7 @@
 $black-color: #000000;
 $white-color: white;
-$border-dark: 1px solid $white-color;
+$grey-color: #ccc;
+$border-dark: 1px solid $grey-color;
 
 @mixin display-content() {
     display: flex;
@@ -9,32 +10,40 @@ $border-dark: 1px solid $white-color;
 
 @mixin button-design($padding, $background-color) {
     border: none;
-    border-radius: 6px;
     padding: $padding;
     background-color: $background-color;
+    text-transform: uppercase;
 }
 
 .container {
     border: $border-dark;
+    width: 350px;
     display: flex;
     flex-direction: column;
     align-items: center;
+    gap: 10px;
+    border-radius: 6px;
+    background-color: $white-color;
     .card-container {
         border-bottom: $border-dark;
-        width: 300px;
-        padding: 5px 20px;
+        width: 310px;
+        padding: 20px;
         .card-header {
             .card-header-btns {
                 display: flex;
                 justify-content: center;
                 gap: 20px;
             }
-            h1 {
+            h2{
                 margin: 0;
+                color: #615c5c;
             }
             .newTask-btn,
             .deleteTask-btn {
-                @include button-design(10px 15px, floralwhite);
+                @include button-design(10px 15px, #f3f3f3);
+                
+                font-size: 12px;
+                border-radius: unset !important;
             }
         }
     }
@@ -43,22 +52,31 @@ $border-dark: 1px solid $white-color;
     }
 }
 .input-container {
-    display: flex;
     .input-card {
-        width: 270px;
-        margin: 16px 0;
+        width: 260px;
         padding: 10px 5px;
         border: $border-dark;
         .input-values {
             display: flex;
             flex-direction: column;
             gap: 10px;
+            .input-values-field{
+                padding: 5px 0;
+                font-size: 14px;
+            }
         }
         .input-btn {
+            .addTask{
+                color: white;
+                background-color: #2196f3;
+            }
+            .cancelTask{
+                border: 0.5px solid #cac6c6;
+            }
             @include display-content;
             margin-top: 10px;
             button {
-                @include button-design(10px 20px, floralwhite);
+                @include button-design(10px 20px, white);
             }
         }
     }
@@ -71,13 +89,15 @@ $border-dark: 1px solid $white-color;
         display: flex;
         justify-content: center;
         flex-direction: column;
-        gap: 15px;
+        margin: 0;
+        gap: 10px;
+        margin-bottom: 15px;
 
         .task-checkbox {
-            width: 20px;
+            transform: scale(1.5);
         }
         .todo-card {
-            padding: 5px 20px;
+            padding: 15px 20px;
             border: $border-dark;
             display: flex;
             flex-direction: column;
@@ -85,14 +105,18 @@ $border-dark: 1px solid $white-color;
             .todo-card-content {
                 display: flex;
                 gap: 10px;
+                align-items: flex-start;
             }
             .todo-card-top {
                 display: flex;
                 justify-content: center;
-                gap: 15px;
+                gap: 5px;
+                word-break: break-all;
                 .task-description {
                     margin: 0;
                     font-weight: 500;
+                    text-transform: capitalize;
+
                 }
             }
         }
@@ -105,19 +129,16 @@ $border-dark: 1px solid $white-color;
     span {
         display: flex;
         align-items: center;
-        gap: 10px;
+        gap: 5px;
     }
     .avatar,
     .date {
         border-radius: 50%;
         height: 20px;
-        width: 20px;
+        width: 25px;
     }
-    .avatar {
-        background-color: red;
-    }
-    .date {
-        background-color: #ccc;
+    .avatar img{
+        width: 25px;
     }
 }
 

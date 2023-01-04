@@ -12,6 +12,7 @@ const data = [
     name: "Finished",
     id: 103,
   },
+  
 ];
 
 const items = [
@@ -21,4 +22,15 @@ const items = [
   { id: "32", text: "hiking", taskType: "Finished" },
 ];
 
-export { data, items };
+const color_list = [
+  "red",
+  "brown",
+  "pink",
+  "lime",
+  "purple",
+  "teal",
+  "amber",
+  "grey"
+];
+
+export { data, items, color_list };

@@ -2,11 +2,14 @@ import React,{useEffect, useState} from 'react';
 import "./../assets/Cards.scss";
 import InputCard from './InputCard';
 import List from './List';
+// import { color_list } from "./../helper/constants";
 
 function Card(props){
   const [display, setDisplay] = useState(false);
   const [cards, setCards] = useState(JSON.parse(localStorage.getItem("tasks")) || []);
   const [deleteAll, setdeleteAll] = useState([]);
+
+  // const random_color = color_list[Math.floor(Math.random() * color_list.length)];
 
   useEffect(() => {
     localStorage.setItem("tasks", JSON.stringify(cards));
@@ -45,10 +48,10 @@ function Card(props){
   };
 
   return (
-    <div className="container">
-      <div className="card-container">
+    <div className="container" id={props.item.id}>
+      <div className="card-container" >
         <div className="card-header">
-          <h1>{props.item.name}</h1>
+          <h2>{props.item.name}</h2>
           <div className="card-header-btns">
             <button onClick={toggleCard} className="newTask-btn">
               New Task

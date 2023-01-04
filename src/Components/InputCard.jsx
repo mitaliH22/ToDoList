@@ -24,8 +24,18 @@ function InputCard(props){
     <>
       <div className="input-card">
         <div className="input-values">
-          <input type="text" value={task} onChange={selectTask} />
-          <select name="category" id="" onChange={selectCategory}>
+          <input
+            type="text"
+            value={task}
+            onChange={selectTask}
+            className="input-values-field"
+          />
+          <select
+            name="category"
+            id=""
+            onChange={selectCategory}
+            className="input-values-field"
+          >
             <option value="select">--Select--</option>
             <option value="ToDo-List">ToDo-List</option>
             <option value="Work-In">Work-In</option>
@@ -33,8 +43,12 @@ function InputCard(props){
           </select>
         </div>
         <div className="input-btn">
-          <button onClick={addTask} >Add</button>
-          <button onClick={props.toggleCard}>Cancel</button>
+          <button onClick={addTask} className="addTask">
+            Add
+          </button>
+          <button onClick={props.toggleCard} className="cancelTask">
+            Cancel
+          </button>
         </div>
       </div>
     </>

@@ -1,53 +1,62 @@
 body {
-    background-color: #123758;
-    color: white;
-}
-.App{
-    padding: 20px 0;
-    display: flex;
-    justify-content: space-around;
-    text-align: center;
+    background-color: #b9c7b9;
 }
 
-.todoList {
-    .list {
-    list-style-type: none;
-    padding: 0;
-    margin: 0;
-    li {
-    display: flex;
-    background-color: rgb(242,242,242);
-    font-weight: 500;
-    margin: 15px 0;
-    width: 400px;
-    text-transform: capitalize;
-    justify-content: space-between;
-    } 
-    p{
+    .App-heading {
+        color: #938989;
+        font-weight: 300;
+       text-align: center;
+       font-size: 3rem;
         margin: 0;
-        padding: 12px;
     }
-    .btn-group{
-        .editBtn{
-        background-color: black;
+    .App {
+        padding: 20px 0;
+        display: flex;
+        justify-content: center;
+        gap: 20px;
+        text-align: center;
     }
-    .delBtn{
-        background-color: red;
-    }
-    .editBtn , .delBtn {
-        border: 1px solid white;
-        font-weight: 700;
-        color: white;
-        padding:8px;
-        transition: 1s;
-        &:hover {
-            cursor: pointer;
+
+    .todoList {
+        .list {
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+            li {
+                display: flex;
+                background-color: rgb(242, 242, 242);
+                font-weight: 500;
+                margin: 15px 0;
+                width: 400px;
+                text-transform: capitalize;
+                justify-content: space-between;
+            }
+            p {
+                margin: 0;
+                padding: 12px;
+            }
+            .btn-group {
+                .editBtn {
+                    background-color: black;
+                }
+                .delBtn {
+                    background-color: red;
+                }
+                .editBtn,
+                .delBtn {
+                    border: 1px solid white;
+                    font-weight: 700;
+                    color: white;
+                    padding: 8px;
+                    transition: 1s;
+                    &:hover {
+                        cursor: pointer;
+                    }
+                }
+                i {
+                    font-size: 22px;
+                }
+            }
         }
     }
-    i{
-         font-size: 22px;
-    }
-    }
-    
-}
-}
+

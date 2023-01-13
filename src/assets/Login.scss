@@ -1,7 +1,7 @@
 .login-container{
     display: flex;
     justify-content: center;
-    padding: 50px;
+    transform: translateY(14%);
     form{
     background: white;
     padding: 20px;
@@ -45,6 +45,7 @@
         }
         label, p{
             font-weight: 500;
+            font-size: 1.25rem;
         }
         .forget-pwd{
             text-align: center;
@@ -58,5 +59,6 @@
 .form-img img{
     border-top-right-radius: 10px;
     border-bottom-right-radius: 10px;
+    height: 100%;
 }
 }

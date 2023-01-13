@@ -75,7 +75,7 @@ function Card(props){
         del={del}
       />
     </div>
-  );
-}
+  )};
+
 
 export default Card;

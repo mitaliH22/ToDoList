@@ -1,0 +1,46 @@
+@mixin display-content() {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    padding: 10px 0;
+}
+
+.signup-container{
+    display: flex;
+    justify-content: center;
+    transform: translateY(14%);
+    form{
+        background: white;    
+        padding: 20px;
+        width: 370px;
+        h1{
+            margin: 0;
+            text-align: center;
+            font-size: 2rem;
+            color: #384c4e;
+        }
+        label{
+            color: #384c4e;
+            font-size: 1.25rem;
+        }
+        .signup-form-groups{
+            @include display-content;
+            input{
+                padding: 6px;
+                font-size: 1rem;
+            }
+        }
+        .signup-form-btn{
+            padding: 10px 0;
+            text-align: right;
+            button{
+                padding: 10px 50px;
+                background: #466443;
+                color: white;
+                border: none;
+                border-radius: 8px;
+                font-size: 1rem;
+            }
+        }
+    }
+}

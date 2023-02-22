@@ -3,7 +3,6 @@ import loginImg from "./../assets/loginP.png";
 import { Link } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
 import { useEffect, useState } from "react";
-import Card from "./Cards";
 
 function Login() {
   const [username , setUsername] = useState("");

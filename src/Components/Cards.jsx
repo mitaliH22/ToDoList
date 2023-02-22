@@ -1,11 +1,9 @@
 import React,{useEffect, useState} from 'react';
 import "./../assets/Cards.scss";
-import InputCard from './InputCard';
 import List from './List';
 // import { color_list } from "./../helper/constants";
 
 function Card(props){
-  const [display, setDisplay] = useState(false);
   const [cards, setCards] = useState(JSON.parse(localStorage.getItem("tasks")) || []);
   const [deleteAll, setdeleteAll] = useState([]);
 
@@ -16,9 +14,6 @@ function Card(props){
   }, [cards]);
 
 
-  const toggleCard = () => {
-    setDisplay(!display);
-  };
 
 
   const updateCards = (cardList) => {

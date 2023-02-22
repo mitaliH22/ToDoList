@@ -23,7 +23,6 @@ function InputCard(props){
   return (
     <>
       <div className="input-card">
-        <div className="input-values">
           <input
             type="text"
             value={task}
@@ -41,7 +40,7 @@ function InputCard(props){
             <option value="Work-In">Work-In</option>
             <option value="Finished">Finished</option>
           </select>
-        </div>
+        
         <div className="input-btn">
           <button onClick={addTask} className="addTask">
             Add

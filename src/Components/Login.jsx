@@ -2,16 +2,17 @@ import "../assets/Login.scss";
 import loginImg from "./../assets/loginP.png";
 import { Link } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
-import { useState } from "react";
+import { useEffect, useState } from "react";
+import Card from "./Cards";
 
 function Login() {
   const [username , setUsername] = useState("");
   const [password , setPassword] = useState("");
   const [authenticated, setAuthenticated] = useState(
-    localStorage.getItem(localStorage.getItem("authenticated") || false)
+    localStorage.getItem("authenticated") || false
   );
 
-  const users = [{username: "John" , password: "testpassword"}];
+  const users = [{ username: "test", password: "testpassword" }];
 
   const navigate = useNavigate();
   const handleSubmit = (e) =>{
@@ -26,6 +27,14 @@ function Login() {
     }
   }
 
+  useEffect(()=>{
+    if(authenticated){
+      navigate("dashboard");
+    }else{
+      console.log("Not authenticated")
+    }
+  })
+  
   return (
     <div className="login-container">
       <form onSubmit={handleSubmit}>
@@ -64,6 +73,7 @@ function Login() {
       <div className="form-img">
         <img src={loginImg} alt="LoginImage" />
       </div>
+     
     </div>
   );
 }

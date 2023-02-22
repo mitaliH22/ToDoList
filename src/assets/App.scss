@@ -10,11 +10,11 @@ body {
         margin: 0;
     }
     .App {
-        padding: 20px 0;
+        padding: 10px 0;
         display: flex;
-        justify-content: center;
         gap: 20px;
         text-align: center;
+        justify-content: center;
     }
 
     .todoList {
@@ -27,7 +27,7 @@ body {
                 background-color: rgb(242, 242, 242);
                 font-weight: 500;
                 margin: 15px 0;
-                width: 400px;
+               
                 text-transform: capitalize;
                 justify-content: space-between;
             }
@@ -60,3 +60,48 @@ body {
         }
     }
 
+nav{
+    background-color: #2E402F;
+    padding: 16px 32px;
+    text-align: right;
+    a{
+        text-decoration: none;
+        font-weight: 700;
+        color: white;
+        margin-right: 16px;
+    }
+}
+
+.header-container{
+    .header-top{
+        display: flex;
+    justify-content: space-around;
+    padding: 16px 32px;
+    h2{
+        margin: 0;
+        color: white;
+    }
+    button{
+        border: none;
+        padding: 0 16px;
+        background-color: #374036;
+        color: white;
+        border-radius: 8px;
+        &:hover{
+            box-shadow: 2px 1px 20px 4px white;
+        }
+    }
+    }
+    .input-container{
+            display: flex;
+            justify-content: center;
+    .input-card{
+        display: flex;
+        justify-content: space-around;
+        button{
+            background-color: #374036;
+            color: white;
+        }
+    }
+}
+}

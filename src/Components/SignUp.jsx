@@ -30,11 +30,12 @@ const handleSubmit = (e) =>{
    var error = document.getElementById("errorMsg");
   if(firstName && lastName && username && password){
     if (passwordValidate(password)){
+
       setuserhandle({
         id: random,
         firstName: firstName,
         lastName: lastName,
-        username: username,
+        username: username
       });
       setfirstName("");
       setlastName("");

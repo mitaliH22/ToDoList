@@ -1,7 +1,7 @@
 $black-color: #000000;
 $white-color: white;
 $grey-color: #ccc;
-$border-dark: 1px solid $grey-color;
+$border-dark: 2px solid $white-color;
 
 @mixin display-content() {
     display: flex;
@@ -16,19 +16,16 @@ $border-dark: 1px solid $grey-color;
 }
 
 .container {
-    border: $border-dark;
-    width: 350px;
+    border-right: $border-dark;
     display: flex;
     flex-direction: column;
     align-items: center;
     gap: 10px;
-    border-radius: 6px;
-    background-color: $white-color;
     .card-container {
         border-bottom: $border-dark;
-        width: 310px;
-        padding: 20px;
+        width: 100%;
         .card-header {
+                @include display-content();
             .card-header-btns {
                 display: flex;
                 justify-content: center;
@@ -53,7 +50,7 @@ $border-dark: 1px solid $grey-color;
 }
 .input-container {
     .input-card {
-        width: 260px;
+        width: 50%;
         padding: 10px 5px;
         border: $border-dark;
         .input-values {
@@ -66,10 +63,7 @@ $border-dark: 1px solid $grey-color;
             }
         }
         .input-btn {
-            .addTask{
-                color: white;
-                background-color: #2196f3;
-            }
+
             .cancelTask{
                 border: 0.5px solid #cac6c6;
             }
@@ -102,6 +96,9 @@ $border-dark: 1px solid $grey-color;
             display: flex;
             flex-direction: column;
             align-items: center;
+            border-radius: 20px;
+            background-color: rgba(255, 255, 255, .15);
+            backdrop-filter: blur(5px);
             .todo-card-content {
                 display: flex;
                 gap: 10px;

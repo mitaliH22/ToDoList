@@ -20,9 +20,6 @@ function Card(props){
     setDisplay(!display);
   };
 
-  const setCardHandler = (data) => {
-    setCards([...cards, data]);
-  };
 
   const updateCards = (cardList) => {
     setCards(cardList);
@@ -53,20 +50,20 @@ function Card(props){
         <div className="card-header">
           <h2>{props.item.name}</h2>
           <div className="card-header-btns">
-            <button onClick={toggleCard} className="newTask-btn">
+            {/* <button onClick={toggleCard} className="newTask-btn">
               New Task
-            </button>
+            </button> */}
             <button className="deleteTask-btn" onClick={del}>
               Delete Selected
             </button>
           </div>
         </div>
       </div>
-      <div className="input-container">
+      {/* <div className="input-container">
         {display && (
           <InputCard toggleCard={toggleCard} setCards={setCardHandler} />
         )}
-      </div>
+      </div> */}
       <List
         cardName={props.item.name}
         cards={cards}

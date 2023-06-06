@@ -7,7 +7,6 @@ import "./assets/App.scss";
 import SignUp from "./Components/SignUp";
 
 export default function App () {
- 
     return (
       <Routes>
         <Route path='/' element={<Login />}></Route>

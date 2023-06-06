@@ -7,7 +7,6 @@ function ListView (props){
   
   const handlecheckbox =(e,item)=>{
     props.deleteSelected(e,item)
-   
   }
 
     return (

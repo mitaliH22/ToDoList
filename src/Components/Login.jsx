@@ -2,14 +2,12 @@ import "../assets/Login.scss";
 import loginImg from "./../assets/loginP.png";
 import { Link } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 
 function Login() {
   const [username , setUsername] = useState("");
   const [password , setPassword] = useState("");
-  const [authenticated, setAuthenticated] = useState(
-    localStorage.getItem("authenticated") || false
-  );
+
 
   const users = [{ username: "test", password: "testpassword" }];
 
@@ -18,21 +16,12 @@ function Login() {
     e.preventDefault();
     const account = users.find((user) => user.username === username);
     if(account && account.password === password){
-      setAuthenticated(true);
       localStorage.setItem("authenticated", true);
       navigate("dashboard");
     }else{
       alert("Please enter correct details")
     }
   }
-
-  useEffect(()=>{
-    if(authenticated){
-      navigate("dashboard");
-    }else{
-      console.log("Not authenticated")
-    }
-  })
   
   return (
     <div className="login-container">

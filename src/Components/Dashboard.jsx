@@ -13,6 +13,7 @@ function Dashboard() {
   );
 
   const navigate = useNavigate();
+  
   useEffect(()=>{
     const loggedInUser = localStorage.getItem("authenticated") || false;
     setAuthenticated(loggedInUser);
@@ -23,12 +24,21 @@ function Dashboard() {
   };
 
   const setCardHandler = (data) => {
-    setCards([...cards, data]);
+    setCards((cards) => [...cards, data]);
     localStorage.setItem("tasks", JSON.stringify(cards));
     console.log("setCardHandler", data);
   };
 
+   useEffect(() => {
+     const storedTasks = localStorage.getItem("tasks");
+     if (storedTasks) {
+       setCards(JSON.parse(storedTasks));
+     }
+   }, []);
   
+    useEffect(() => {
+      localStorage.setItem("tasks", JSON.stringify(cards));
+    }, [cards]);
 
   if(!authenticated){
     return navigate("/");
